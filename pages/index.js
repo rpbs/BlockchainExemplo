@@ -9,11 +9,13 @@ import {
   Grid,
   Header,
   Icon,
-  Image,
+  Checkbox,
   List,
   Menu,
   Segment,
   Card,
+  Form,
+  Button
 } from 'semantic-ui-react';
 
 class App extends Component{
@@ -21,33 +23,26 @@ class App extends Component{
     return (
       <Layout>
         <Segment>
-        <Container text>
-    <Header as='h2'>Header</Header>
-    <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-      Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-      ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-      consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-      In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-      link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean
-      vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
-      enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
-      ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
-      Curabitur ullamcorper ultricies nisi.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-      Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-      ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-      consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-      In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-      link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean
-      vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
-      enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
-      ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
-      Curabitur ullamcorper ultricies nisi.
-    </p>
-  </Container>          
+          <Container text>
+            <Header as='h2'>Cadastro de Cliente</Header>
+            <p>
+            <Form>
+                <Form.Field>
+                  <label>Nome</label>
+                  <input placeholder='Nome completo' />
+                </Form.Field>
+                <Form.Field>
+                  <label>Idade</label>
+                  <input placeholder='Idade' />
+                </Form.Field>
+                <Form.Field>
+                <label>Documento</label>
+                  <input placeholder='CPF ou RG' />
+                </Form.Field>
+                <Button type='submit'>Cadastrar</Button>
+              </Form>
+            </p>            
+          </Container>          
         </Segment>
       </Layout>
     )
