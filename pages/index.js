@@ -1,7 +1,7 @@
+
 import _ from 'lodash'
 import React, { Component } from 'react'
 import Layout from '../components/Layout';
-import Input from '../components/Input';
 
 
 import {
@@ -17,7 +17,8 @@ import {
   Segment,
   Card,
   Form,
-  Button
+  Button,
+  Input
 } from 'semantic-ui-react';
 
 class App extends Component{
@@ -28,8 +29,7 @@ class App extends Component{
   };
   cadastrarCliente = async (event) => {
       event.preventDefault();
-      console.log(this.state.nome);
-      
+      console.log(this.state.nome);      
   };
 
   render(){ 
@@ -39,11 +39,20 @@ class App extends Component{
           <Container text>
             <Header as='h2'>Cadastro de Cliente</Header>
             <p>
-            <Form onSubmit={this.cadastrarCliente}>
+              <Form onSubmit={this.cadastrarCliente}>
+              <Form.Field>
+                <label>Contribuição mínima</label>
                 <Input nome="Nome" placeholder="Nome Completo" onChange={ ev => this.setState({ nome : ev.target.value })} />
+              </Form.Field>
+              <Form.Field>
+                <label>Contribuição mínima</label>
                 <Input nome="Idade" placeholder="Idade" />
+              </Form.Field>
+              <Form.Field>
+                <label>Contribuição mínima</label>
                 <Input nome="Documento" placeholder="CPF ou RG" />
-                <Button type='submit'>Cadastrar</Button>
+              </Form.Field>
+              <Button type='submit'>Cadastrar</Button>
             </Form>
             </p>            
           </Container>          
