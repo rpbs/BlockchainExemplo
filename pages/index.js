@@ -29,7 +29,11 @@ class App extends Component{
   };
   cadastrarCliente = async (event) => {
       event.preventDefault();
-      console.log(this.state.nome);      
+      const { nome, idade, documento } = this.state;
+      console.log(nome);
+      console.log(idade);
+      console.log(documento);
+      
   };
 
   render(){ 
@@ -41,15 +45,15 @@ class App extends Component{
             <p>
               <Form onSubmit={this.cadastrarCliente}>
               <Form.Field>
-                <label>Contribuição mínima</label>
+                <label>Nome</label>
                 <Input nome="Nome" placeholder="Nome Completo" onChange={ ev => this.setState({ nome : ev.target.value })} />
               </Form.Field>
               <Form.Field>
-                <label>Contribuição mínima</label>
+                <label>Idade</label>
                 <Input nome="Idade" placeholder="Idade" />
               </Form.Field>
               <Form.Field>
-                <label>Contribuição mínima</label>
+                <label>Documento</label>
                 <Input nome="Documento" placeholder="CPF ou RG" />
               </Form.Field>
               <Button type='submit'>Cadastrar</Button>
