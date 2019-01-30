@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Form }  from 'semantic-ui-react';
 
-export default () => {
+export default (props) => {
   return (
-    <Form>
-      <Form.Field>
-        
-      </Form.Field>
-    </Form>
-  )
+        <Form.Field>
+          <label>{props.nome}</label>
+          <input placeholder={props.placeholder} />
+        </Form.Field>
+  );
 }
