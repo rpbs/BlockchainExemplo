@@ -50,11 +50,11 @@ class App extends Component{
               </Form.Field>
               <Form.Field>
                 <label>Idade</label>
-                <Input nome="Idade" placeholder="Idade" />
+                <Input nome="Idade" placeholder="Idade" onChange={ ev => this.setState({ idade : ev.target.value })} />
               </Form.Field>
               <Form.Field>
                 <label>Documento</label>
-                <Input nome="Documento" placeholder="CPF ou RG" />
+                <Input nome="Documento" placeholder="CPF ou RG" onChange={ ev => this.setState({ documento : ev.target.value })} />
               </Form.Field>
               <Button type='submit'>Cadastrar</Button>
             </Form>
