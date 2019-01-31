@@ -2,27 +2,22 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
 import Layout from '../components/Layout';
-
+import Web3 from 'web3';
 
 import {
   Container,
-  Divider,
-  Dropdown,
-  Grid,
   Header,
-  Icon,
-  Checkbox,
-  List,
-  Menu,
   Segment,
-  Card,
   Form,
   Button,
   Input
 } from 'semantic-ui-react';
 
+const web3 = new Web3();
+
 class App extends Component{
-  state = {
+
+ state = {
     nome : "",    
     idade: 0,
     documento: 0

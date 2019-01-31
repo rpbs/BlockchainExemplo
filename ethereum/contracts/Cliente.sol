@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.4.25;
 
 contract Cliente {
     
@@ -12,6 +12,8 @@ contract Cliente {
     
     DadosCliente[] public clientes;
     
+    mapping(string => uint) public mapaClientes;
+    
     constructor() public{
         manager = msg.sender;
     }
@@ -24,5 +26,9 @@ contract Cliente {
         });
         
         clientes.push(dados);
-    }         
+    }   
+    
+    function RemoverClient(uint idx) public {
+        delete clientes[idx];
+    }
 }

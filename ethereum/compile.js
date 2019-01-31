@@ -7,6 +7,7 @@ fs.removeSync(buildPath);
 
 
 const campanhaPath = path.resolve(__dirname, 'contracts', 'Cliente.sol');
+
 const source = fs.readFileSync(campanhaPath, 'utf8');
 const output = solc.compile(source, 1).contracts;
 
