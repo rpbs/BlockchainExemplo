@@ -1,4 +1,4 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.4.24;
 
 contract Cliente {
     
@@ -11,8 +11,6 @@ contract Cliente {
     }
     
     DadosCliente[] public clientes;
-    
-    mapping(string => uint) public mapaClientes;
     
     constructor() public{
         manager = msg.sender;
