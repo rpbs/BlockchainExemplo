@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rpbs/BlockchainExemplo#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "fs-extra": "^7.0.1",
     "ganache-cli": "^6.2.5",
     "lodash": "^4.17.11",
