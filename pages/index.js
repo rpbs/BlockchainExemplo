@@ -3,17 +3,13 @@ import _ from 'lodash'
 import React, { Component } from 'react'
 import Layout from '../components/Layout';
 import Web3 from 'web3';
+import Cliente from "../entities/Cliente";
 
-import {
-  Container,
-  Header,
-  Segment,
-  Form,
-  Button,
-  Input
-} from 'semantic-ui-react';
+import { Container, Divider, Grid, Header, Menu, Message, Segment, Table } from 'semantic-ui-react'
 
-const web3 = new Web3();
+const web3 = Web3;
+const address = "0xbd8cd2f9609765521632baad6fd44668a358411e";
+const endContrato = ""
 
 class App extends Component{
 
@@ -22,41 +18,45 @@ class App extends Component{
     idade: 0,
     documento: 0
   };
-  cadastrarCliente = async (event) => {
-      event.preventDefault();
-      const { nome, idade, documento } = this.state;
-      console.log(nome);
-      console.log(idade);
-      console.log(documento);
-      
-  };
 
+  async renderizarLinhas(){
+    let contrato = Cliente(address);
+    let manager = contrato.methods.manager().call();
+    console.log(contrato);
+    return (
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Cell</Table.Cell>
+              <Table.Cell>Cell</Table.Cell>
+              <Table.Cell>Cell</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>Cell</Table.Cell>
+              <Table.Cell>Cell</Table.Cell>
+              <Table.Cell>Cell</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>Cell</Table.Cell>
+              <Table.Cell>Cell</Table.Cell>
+              <Table.Cell>Cell</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+          )
+  }
+ 
   render(){ 
     return (
       <Layout>
-        <Segment>
-          <Container text>
-            <Header as='h2'>Cadastro de Cliente</Header>
-            <p>
-              <Form onSubmit={this.cadastrarCliente}>
-              <Form.Field>
-                <label>Nome</label>
-                <Input nome="Nome" placeholder="Nome Completo" onChange={ ev => this.setState({ nome : ev.target.value })} />
-              </Form.Field>
-              <Form.Field>
-                <label>Idade</label>
-                <Input nome="Idade" placeholder="Idade" onChange={ ev => this.setState({ idade : ev.target.value })} />
-              </Form.Field>
-              <Form.Field>
-                <label>Documento</label>
-                <Input nome="Documento" placeholder="CPF ou RG" onChange={ ev => this.setState({ documento : ev.target.value })} />
-              </Form.Field>
-              <Button type='submit'>Cadastrar</Button>
-            </Form>
-            </p>            
-          </Container>          
-        </Segment>
+        <Table attached='bottom'>
+          <Table.Header>
+            <Table.HeaderCell>Nome</Table.HeaderCell>
+            <Table.HeaderCell>Idade</Table.HeaderCell>
+            <Table.HeaderCell>Documento</Table.HeaderCell>
+            {this.renderizarLinhas()}            
+            </Table.Header>
+        </Table>
       </Layout>
+  
     )
   }
 }

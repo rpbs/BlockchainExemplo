@@ -18,7 +18,7 @@ const contrato = web3.eth.Contract(JSON.parse(json.interface), contratoEndereco,
 //   console.log(f);  
 // });
 
-contrato.methods.RemoverClient(0).send({ from : address, gas: '1000000' });
+contrato.methods.RemoverClient(1).send({  from : address, gas: '1000000'});
 
 // contrato.methods.clientes(1).call().then((m) =>{
 //   console.log(m);

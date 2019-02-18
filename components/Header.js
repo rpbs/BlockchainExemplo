@@ -9,6 +9,9 @@ export default () => {
         <Link route="/">
           <a className="item">Listagem</a>
         </Link>
+        <Link route="/cadastro">
+          <a className="item">Cadastro</a>
+        </Link>
         <Link route="/emprestimo">
           <a className="item">Empréstimo</a>
         </Link>
